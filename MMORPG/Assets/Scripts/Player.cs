@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
+
+    [SerializeField]
+    Transform destination;
+
+    NavMeshAgent navMeshAgent;
+
     // Variables
     public float movementSpeed;
     public GameObject playerMovePoint;
@@ -11,9 +18,28 @@ public class Player : MonoBehaviour
     private Transform pmr;
 
     // Functions
+    void Start()
+    {
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
 
+        if (navMeshAgent == null)
+            Debug.LogError("The nav mesh agent is not attached to " + gameObject.name);
+        else
+        {
+            SetDestination();
+        }
+    }
+
+    private void SetDestination()
+    {
+        if(destination != null)
+        {
+            Vector3 targetVector = destination.transform.position;
+            navMeshAgent.SetDestination(targetVector);
+        }
+    }
     
-    void Update()
+    /*void Update()
     {
         //Player movement
         Plane playerPlane = new Plane(Vector3.up, transform.position);
@@ -29,5 +55,5 @@ public class Player : MonoBehaviour
                // pmr = Instantiate(transform.position)
             }
         }
-    }
+    }*/
 }
