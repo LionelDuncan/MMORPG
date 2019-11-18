@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterInput.cs" />
      <Compile Include="Assets\Scripts\fp_cam.cs" />
+     <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
  <Reference Include="Unity.Timeline.Editor">

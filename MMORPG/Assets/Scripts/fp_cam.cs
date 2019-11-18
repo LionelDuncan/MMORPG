@@ -19,7 +19,7 @@ public class fp_cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Mouse X");
+        /*float horizontal = Input.GetAxis("Mouse X");
         float vertical = Input.GetAxis("Mouse Y");
 
         Vector2 look = new Vector2(horizontal, vertical);
@@ -27,6 +27,6 @@ public class fp_cam : MonoBehaviour
 
         mouseLook.y = Mathf.Clamp(mouseLook.y, -80f, 80f);
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
+        character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);*/
     }
 }
